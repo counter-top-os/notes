@@ -1,7 +1,7 @@
 {
-  "templates": ["./templates/main.std", "./templates/creator.std"],
+  "templates": ["./src/templates/main.std", "./src/templates/creator.std"],
   "description": "The main client for the OS",
-  "global_css": "./global.pss",
+  "global_css": "./src/global.pss",
   "docs": {
     "value_sets": []
   },

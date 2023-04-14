@@ -1,4 +1,4 @@
-import { CreateAppServer, Struct, UTF8, DateTime } from "./deps/counter_top.ts";
+import { CreateAppServer, Struct, UTF8, DateTime } from "../deps/counter_top.ts";
 
 const Server = CreateAppServer(
   {
