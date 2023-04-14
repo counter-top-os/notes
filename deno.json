@@ -1,5 +1,6 @@
 {
   "tasks": {
+    "install": "deno install --allow-all https://deno.land/x/wholemeal@1.0.5/main.ts",
     "build": "wholemeal build",
     "dev": "wholemeal dev"
   }
