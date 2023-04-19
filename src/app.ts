@@ -1,4 +1,9 @@
-import { CreateAppServer, Struct, UTF8, DateTime } from "../deps/counter_top.ts";
+import {
+  CreateAppServer,
+  Struct,
+  UTF8,
+  DateTime,
+} from "../deps/counter_top.ts";
 
 const Server = CreateAppServer(
   {
@@ -9,17 +14,17 @@ const Server = CreateAppServer(
       text: new UTF8(),
     }),
   },
-  {},
-  (c) => {
-    c.OpenWindow("index.html", "Notes", {
-      top: "50px",
-      left: "50px",
-      width: "800px",
-      height: "600px",
-    }).then(() => c.EndApp());
-    return c;
-  }
+  {}
 );
+
+Server.CreateHandler("system:focus", ({ OpenWindow }) => {
+  OpenWindow("index.html", "Notes", {
+    top: "50px",
+    left: "50px",
+    width: "800px",
+    height: "600px",
+  });
+});
 
 Server.CreateHandler("create_note", ({ UserState }, _, name: string) => {
   const id = crypto.randomUUID();
